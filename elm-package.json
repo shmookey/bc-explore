@@ -1,7 +1,7 @@
 {
     "version": "1.0.0",
     "summary": "Web blockchain explorer for Ethereum",
-    "repository": "https://github.com/shmookey/bc-explore",
+    "repository": "https://github.com/shmookey/bc-explore.git",
     "license": "BSD3",
     "source-directories": [
         "src/elm"
