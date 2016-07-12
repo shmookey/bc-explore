@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Blockchain explorer</title>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="resources/fonts/clearsans-light.css" />
+    <link rel="stylesheet" href="resources/fonts/clearsans.css" />
+    <link rel="stylesheet" href="resources/fonts/clearsans-bold.css" />
+    <link rel="stylesheet" href="resources/fonts/source-code-pro/source-code-pro.css" />
+  </head>
+  <body>
+    <div class="page-container" id="app"></div>
+    <script>
+      var node = document.getElementById('app');
+      var app = Elm.Main.embed(node);
+    </script>
+  </body>
+</html>

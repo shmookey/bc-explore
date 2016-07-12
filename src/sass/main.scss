@@ -1,0 +1,186 @@
+$indigo700: #303F9F;
+$page-header-height: 30px;
+
+.pageHeader {
+  position:    fixed;
+  z-index:     100;
+  top:         0;
+  left:        0;
+  line-height: $page-header-height;
+  height:      $page-header-height;
+  width:       100%;
+  background:  $indigo700;
+  color:       white;
+  font-family: "ClearSans", sans-serif;
+  .logo {
+    line-height:    $page-header-height;
+    font-weight:    bold;
+    font-family:    "ClearSans-Bold", sans-serif;
+    vertical-align: middle;
+    padding-left:   10px;
+  }
+  .endpoint {
+    position: absolute;
+    right:    20px;
+    top:      0px;
+    input {
+      background:    $indigo700;
+      width:         200px;
+      color:         white;
+      border:        none;
+      outline:       none;
+      font-size:     10pt;
+      font-family:   "ClearSans", sans-serif;
+      text-align:    right;
+      padding-right: 5px;
+    }
+    .icon {
+      position: relative;
+      top: 3px;
+    }
+  }
+}
+
+.blockchain {
+  margin-top: ($page-header-height*2);
+}
+
+.block {
+  $value-hex-bg:    rgb(220,220,220);
+  $value-hex-pad:   5px;
+  $label-pad-right: 25px;
+  $header-height:   20px;
+
+  width:       90%;
+  border:      2px dashed rgb(230,230,230);
+  margin:      2px auto;
+  font-family: "ClearSans", sans-serif;
+  font-size:   10pt;
+
+  .header {
+    display:        flex;
+    padding:        5px;
+    flex-direction: row;
+    flex-wrap:      nowrap;
+    height:         $header-height;
+
+    .blockNumber {
+      height:         $header-height;
+      width:          120px;
+      line-height:    $header-height;
+      vertical-align: middle;
+      font-family:    "ClearSans-Bold", sans-serif;
+      font-size:      12pt;
+    }
+  }
+
+  &.summary .header, &.detail .header {
+    border-bottom: 1px solid rgb(230,230,230);
+  }
+  &.collapsed .header {
+    border-bottom: 0px solid rgb(230,230,230);
+  }
+  .numbericon {
+    height: 20px;
+    line-height: 20px;
+    vertical-align: middle;
+    .text {
+      margin-left: 15px;
+    }
+    .icon {
+      position: relative;
+      vertical-align: middle;
+      margin-right: 3px;
+      width: 15px;
+      svg { position: absolute; top: 1px; width: 15px;}
+    }
+  }
+  .address {
+    color:       blue;
+    font-family: "Source Code Pro", "Menlo", monospace;
+    .text {
+      border-bottom: 1px dashed blue;
+      margin-left: 15px;
+    }
+    .icon {
+      position: relative;
+      vertical-align: middle;
+      margin-right: 3px;
+      width: 15px;
+      svg { position: absolute; top: 1px; width: 15px;}
+    }
+  }
+
+  .blockHashVal {
+    color:       red;
+    font-family: "Source Code Pro", "Menlo", monospace;
+    border-bottom: 1px dashed red;
+  }
+
+  .plainHash {
+    color:       purple;
+    font-family: "Source Code Pro", "Menlo", monospace;
+  }
+
+  &.stub .header .expander {
+      height:         $header-height;
+      line-height:    $header-height;
+      vertical-align: middle;
+      text-align:     center;
+      width:          100%;
+  }
+
+  .field {
+    display:        flex;
+    flex-direction: row;
+    flex-wrap:      nowrap;
+    width:          100%;
+    position:       relative;
+    margin:         1px;
+    .label {
+      font-family:   "ClearSans-Bold", sans-serif;
+      text-align:    right;
+      padding-right: $label-pad-right;
+      font-weight:   bold;
+      line-height:   1.5em;
+      vertical-align: bottom;
+    }
+    .value {
+      flex-grow:      1;
+      overflow:       hidden;
+      overflow-wrap:  break-word;
+      vertical-align: bottom;
+      line-height:    1.5em;
+    }
+    &.hex .value {
+      background-color: rgb(240,240,240);
+      font-family:      "Source Code Pro", "Menlo", monospace;
+      padding:          0px;
+    }
+    
+  }
+
+  &.data {
+    display:        flex;
+    flex-direction: column;
+    .field .label {
+      width:     150px;
+      min-width: 150px;
+    }
+    .header-content {
+      width: 100%;
+      text-align: right;
+      font-size: 11pt;
+      padding-right: 10px;
+      .icon {
+      }
+    }
+  }
+  .transaction {
+    .field .label {
+      width:     100px;
+      min-width: 100px;
+    }
+  }
+}
+
