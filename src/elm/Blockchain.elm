@@ -153,9 +153,9 @@ viewBlock i (block, viewState) =
         , H.div [HA.class "value"] [value]
         ]
 
-    blockFrame cls attrs header body =
+    blockFrame cls attrs onHeaderClick header body =
       H.div ((HA.class <| "block " ++ cls)::attrs)
-        [ H.div [HA.class "header"]
+        [ H.div [HA.class "header", HE.onClick onHeaderClick]
           [ H.div [HA.class "blockNumber"] [H.text <| "Block " ++ (toString i)]
           , header
           ]
@@ -171,17 +171,17 @@ viewBlock i (block, viewState) =
         ]
         
     blockSummary x =
-      blockFrame "data summary" [HE.onClick expandBlock]
+      blockFrame "data summary" [] expandBlock
         (blockHeaderContent x) 
         (H.div [] [])
 
     blockCollapsed x =
-      blockFrame "data collapsed" [HE.onClick expandBlock] 
+      blockFrame "data collapsed" [] expandBlock
         (blockHeaderContent x) 
         (H.div [] [])
 
     blockDetail x =
-      blockFrame "data detail" [HE.onClick collapseBlock]
+      blockFrame "data detail" [] collapseBlock
         (blockHeaderContent x) 
         ( H.div [] 
           [ field  ""    "timestamp"        "Timestamp"         (DF.formatISO8601 x.timestamp)
@@ -227,12 +227,12 @@ viewBlock i (block, viewState) =
       let
         err = "Error retrieving block: " ++ (toString x)
       in
-        blockFrame "error collapsed" [HE.onClick loadBlock]
+        blockFrame "error collapsed" [] loadBlock
           (H.div [] [H.text (toString x)]) 
           (H.div [] []) 
 
     blockStub =
-      blockFrame "stub collapsed" [HE.onClick loadBlock] 
+      blockFrame "stub collapsed" [] loadBlock 
         (H.div [HA.class "expander"] [H.text "- click to expand -"])
         (H.div [] [])
 

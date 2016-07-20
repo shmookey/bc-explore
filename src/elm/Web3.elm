@@ -22,6 +22,7 @@ import Web3.Codec.Block as Block
 import Web3.Codec as Codec
 import Web3.Rpc as Rpc
 import Web3.Types as Types
+import Web3.Codec.ABI as ABICodec
 
 
 -- Re-export exposed types
